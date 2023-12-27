@@ -1,6 +1,10 @@
+$.getScript("https://code.jquery.com/ui/1.10.4/jquery-ui.js", function() {
+});
+
 // pressure version of the BART
 
 $(document).ready(function() { 
+    console.log("coucou");
     
     const saveThis = 'hidden'; // text fields that save data should not be shown; can be shown in testing
     
@@ -43,8 +47,7 @@ $(document).ready(function() {
     $('#total_term').html(label_balance);
     $('#total_value').html(total+label_currency);
     
-    
-    // below: create functions that define game functionality
+   // below: create functions that define game functionality
     
     // what happens when a new round starts
     var new_round = function() {
@@ -74,6 +77,7 @@ $(document).ready(function() {
         $('#goOn').show();
         $('#message').html(msg_end1+total+msg_end2).show();
         $('#saveThis1').html('<input type='+saveThis+' name ="v_177" value="'+number_pumps+'" />');
+        $('answer583851X1X2SQ001').value(number_pumps);
         $('#saveThis2').html('<input type='+saveThis+' name ="v_178" value="'+exploded+'" />');
         $('#saveThis3').html('<input type='+saveThis+' name ="v_577" value="'+total+'" />');
     };
@@ -92,19 +96,12 @@ $(document).ready(function() {
         $('#message').html(msg_1+pumpmeup+msg_collect2+explode_array[round-1]+msg_collect3+pumpmeup+msg_collect4).show();
         // activate this if you have a sound file to play a sound
         // when the balloon does not explode:
-        
-	// document.getElementById('tada_sound').play(); 
-    };  
+    };
     
     // animate explosion using jQuery UI explosion
     var balloon_explode = function() {
-        $('#ballon').hide( "explode", {pieces: 48}, 1000 );
-        
-        // activate this if you have a sound file to play a sound
-        // when the balloon explodes:
-        
-        // document.getElementById('explosion_sound').play();    
-    };  
+        $('#ballon').hide();
+    };
     
     // show button that starts next round
     var gonext_message = function() {
@@ -147,8 +144,9 @@ $(document).ready(function() {
     $("#goOn").click(function() {
         $("form[name=f1]").submit();
     });
-    
-    // collect button: release pressure and hope for money
+     ////////
+     
+      // collect button: release pressure and hope for money
     $('#collect').click(function() {
         if (pumps === 0) {
 	    alert('In der Zuleitung befindet sich noch keine Luft. Sie können den Ballon erst aufpumpen, sobald Sie mindestens einmal Luft in die Zuleitung gepumpt haben. Betätigen Sie dazu den Button "Druck in der Zuleitung erhöhen."');
@@ -233,4 +231,5 @@ $(document).ready(function() {
     // start the game!
     new_round();
     
+    console.log("bis bald")
 });
