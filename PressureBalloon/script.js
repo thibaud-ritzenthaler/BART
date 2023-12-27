@@ -25,7 +25,7 @@ $(document).ready(function() {
     var label_balance = 'Gesamtguthaben:';
     var label_currency = ' Taler';
     var label_header = 'Ballon-Spiel Runde ';
-    var label_gonext1 = 'Nächste Runde starten';
+    var label_gonext1 = 'Start next round';
     var label_gonext2 = 'Spiel beenden';
     var msg_1 = '<p>Sie haben in dieser Runde ';
     var msg_explosion2 = ' Mal den Druck erhöht. Der Ballon ist jedoch schon nach ';
