@@ -9,36 +9,92 @@ $(document).ready(function() {
     const saveThis = 'hidden'; // text fields that save data should not be shown; can be shown in testing
     
     // initialize values
+    
+    
     let round = 0;
-    var start_size = 150; // start value of widht & height of the image; must correspond to the value that is specified for the #ballon id in style.css
-    var increase = 8; // number of pixels by which balloon is increased each pump
-    var size; // start_size incremented by 'increase'
-    var pumps; 
-    var total = 0; // money that has been earned in total
-    var rounds_played = 6;
-    var explode_array =  [17, 10, 23, 13, 7, 20];
-    var maximal_pumps = 30;
-    var pumpmeup; // number pumps in a given round
-    var number_pumps = []; // arrays for saving number of pumps
-    var exploded = []; // array for saving whether ballon has exploded
+    let size; // start_size incremented by 'increase'
+    let pumps; 
+    let total = 0; // money that has been earned in total
+    let pumpmeup; // number pumps in a given round
+    const rounds_to_play = 10;
+    const maximal_pumps = 30;
+    const number_pumps = []; // arrays for saving number of pumps
+    const exploded = []; // array for saving whether ballon has exploded
+    const start_size = 150; // start value of widht & height of the image; must correspond to the value that is specified for the #ballon id in style.css
+    const increase = 8; // number of pixels by which balloon is increased each pump
+    const language = "EN"
     
-    
+    let label_press;
+    let label_collect;
+    let label_balance;
+    let label_currency;
+    let label_header;
+    let label_gonext1;
+    let label_gonext2;
+    let msg_1;
+    let msg_explosion2;
+    let msg_explosion3;
+    let msg_collect2;
+    let msg_collect3;
+    let msg_collect4;
+    let msg_end1;
+    let msg_end2;
+
     // initialize language
-    var label_press = 'Druck in der Zuleitung erhöhen';
-    var label_collect = 'Ballon mit Luft aus Zuleitung aufpumpen';
-    var label_balance = 'Gesamtguthaben:';
-    var label_currency = ' Taler';
-    var label_header = 'Ballon-Spiel Runde ';
-    var label_gonext1 = 'Nächste Runde starten';
-    var label_gonext2 = 'Spiel beenden';
-    var msg_1 = '<p>Sie haben in dieser Runde ';
-    var msg_explosion2 = ' Mal den Druck erhöht. Der Ballon ist jedoch schon nach ';
-    var msg_explosion3 = ' Druckerhöhungen geplatzt!</p><p>Sie haben in dieser Runde kein Geld verdient.</p>';
-    var msg_collect2 = ' Mal den Druck erhöht, ohne dass der Ballon explodiert ist. Der Ballon wäre in dieser Runde erst nach '
-    var msg_collect3 = ' Druckerhöhungen geplatzt.</p><p>Sie haben ';
-    var msg_collect4 = ' Taler Gewinn gemacht. Das erspielte Geld ist sicher in der Bank.</p>';
-    var msg_end1 = '<p>Damit ist dieser Teil der Studie abgeschlossen. Sie haben im Ballon-Spiel ';
-    var msg_end2 = ' Taler Gewinn gemacht. </p><p>Klicken Sie auf <i>Weiter</i>, um mit der Studie forzufahren.</p>';
+    if (language === "DE") {
+        label_press = 'Druck in der Zuleitung erhöhen';
+        label_collect = 'Ballon mit Luft aus Zuleitung aufpumpen';
+        label_balance = 'Gesamtguthaben:';
+        label_currency = ' Taler';
+        label_header = 'Ballon-Spiel Runde ';
+        label_gonext1 = 'Nächste Runde starten';
+        label_gonext2 = 'Spiel beenden';
+        msg_1 = '<p>Sie haben in dieser Runde ';
+        msg_explosion2 = ' Mal den Druck erhöht. Der Ballon ist jedoch schon nach ';
+        msg_explosion3 = ' Druckerhöhungen geplatzt!</p><p>Sie haben in dieser Runde kein Geld verdient.</p>';
+        msg_collect2 = ' Mal den Druck erhöht, ohne dass der Ballon explodiert ist. Der Ballon wäre in dieser Runde erst nach '
+        msg_collect3 = ' Druckerhöhungen geplatzt.</p><p>Sie haben ';
+        msg_collect4 = ' Taler Gewinn gemacht. Das erspielte Geld ist sicher in der Bank.</p>';
+        msg_end1 = '<p>Damit ist dieser Teil der Studie abgeschlossen. Sie haben im Ballon-Spiel ';
+        msg_end2 = ' Taler Gewinn gemacht. </p><p>Klicken Sie auf <i>Weiter</i>, um mit der Studie forzufahren.</p>';
+    }
+
+    if (language === "EN") {
+        label_press = 'Druck in der Zuleitung erhöhen';
+        label_collect = 'Ballon mit Luft aus Zuleitung aufpumpen';
+        label_balance = 'Gesamtguthaben:';
+        label_currency = ' Taler';
+        label_header = 'Ballon-Spiel Runde ';
+        label_gonext1 = 'Nächste Runde starten';
+        label_gonext2 = 'Spiel beenden';
+        msg_1 = '<p>Sie haben in dieser Runde ';
+        msg_explosion2 = ' Mal den Druck erhöht. Der Ballon ist jedoch schon nach ';
+        msg_explosion3 = ' Druckerhöhungen geplatzt!</p><p>Sie haben in dieser Runde kein Geld verdient.</p>';
+        msg_collect2 = ' Mal den Druck erhöht, ohne dass der Ballon explodiert ist. Der Ballon wäre in dieser Runde erst nach '
+        msg_collect3 = ' Druckerhöhungen geplatzt.</p><p>Sie haben ';
+        msg_collect4 = ' Taler Gewinn gemacht. Das erspielte Geld ist sicher in der Bank.</p>';
+        msg_end1 = '<p>Damit ist dieser Teil der Studie abgeschlossen. Sie haben im Ballon-Spiel ';
+        msg_end2 = ' Taler Gewinn gemacht. </p><p>Klicken Sie auf <i>Weiter</i>, um mit der Studie forzufahren.</p>';
+    }
+
+    if (language === "FR") {
+        label_press = 'Druck in der Zuleitung erhöhen';
+        label_collect = 'Ballon mit Luft aus Zuleitung aufpumpen';
+        label_balance = 'Gesamtguthaben:';
+        label_currency = ' Taler';
+        label_header = 'Ballon-Spiel Runde ';
+        label_gonext1 = 'Nächste Runde starten';
+        label_gonext2 = 'Spiel beenden';
+        msg_1 = '<p>Sie haben in dieser Runde ';
+        msg_explosion2 = ' Mal den Druck erhöht. Der Ballon ist jedoch schon nach ';
+        msg_explosion3 = ' Druckerhöhungen geplatzt!</p><p>Sie haben in dieser Runde kein Geld verdient.</p>';
+        msg_collect2 = ' Mal den Druck erhöht, ohne dass der Ballon explodiert ist. Der Ballon wäre in dieser Runde erst nach '
+        msg_collect3 = ' Druckerhöhungen geplatzt.</p><p>Sie haben ';
+        msg_collect4 = ' Taler Gewinn gemacht. Das erspielte Geld ist sicher in der Bank.</p>';
+        msg_end1 = '<p>Damit ist dieser Teil der Studie abgeschlossen. Sie haben im Ballon-Spiel ';
+        msg_end2 = ' Taler Gewinn gemacht. </p><p>Klicken Sie auf <i>Weiter</i>, um mit der Studie forzufahren.</p>';
+    }
+    
     
     
     // initialize labels
@@ -46,7 +102,25 @@ $(document).ready(function() {
     $('#collect').html(label_collect);
     $('#total_term').html(label_balance);
     $('#total_value').html(total+label_currency);
-    
+
+    // create the explode array random
+
+    // Normal distribution random
+    const randn_bm = function() {
+        let u = 0, v = 0;
+        while(u === 0) u = Math.random(); //Converting [0,1) to (0,1)
+        while(v === 0) v = Math.random();
+        let num = Math.sqrt( -2.0 * Math.log( u ) ) * Math.cos( 2.0 * Math.PI * v );
+        num = num / 10.0 + 0.5; // Translate to 0 -> 1
+        if (num > 1 || num < 0) return randn_bm() // resample between 0 and 1
+        return num
+    };
+
+    const explode_array = []
+    for ( let i = 0; i < rounds_to_play; i++) {
+        explode_array.push(Math.floor(randn_bm() * 30) + 1)
+    }
+    console.log(explode_array)
    // below: create functions that define game functionality
     
     // what happens when a new round starts
@@ -106,7 +180,7 @@ $(document).ready(function() {
     // show button that starts next round
     var gonext_message = function() {
         $('#ballon').hide();
-        if (round < rounds_played) {
+        if (round < rounds_to_play) {
             $('#gonext').html(label_gonext1).show();
         }
         else {
@@ -132,7 +206,7 @@ $(document).ready(function() {
     
     // click this button to start the next round (or end game when all rounds are played)
     $('#gonext').click(function() {
-        if (round < rounds_played) {
+        if (round < rounds_to_play) {
             new_round();
         }
         else {
@@ -144,7 +218,6 @@ $(document).ready(function() {
     $("#goOn").click(function() {
         $("form[name=f1]").submit();
     });
-     ////////
      
       // collect button: release pressure and hope for money
     $('#collect').click(function() {

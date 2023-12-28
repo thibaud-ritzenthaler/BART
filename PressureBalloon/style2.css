@@ -21,10 +21,13 @@
 
 #slider {
   height:150px;
-  margin: auto;
-  background-color: lavender;
+  margin-top: 10px;
+  background-color: #9DE0AD;
 }
 
+#showValue {
+  text-align: right;
+}
 
 .ui-state-disabled {
   opacity: 1;
@@ -33,12 +36,11 @@
 .ui-slider-handle {
  text-align:center;
  text-decoration: none;
- width: 29px !important;
 }
 
 .ui-slider-range { 
  background-image:none;
- background-color: lemonchiffon; 
+ background-color: #D2691E; 
 }
 
 
@@ -59,47 +61,26 @@
   border-radius: 5px;
   width: 100%;
   background: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
 }
 
 #ballon {
   height: 150px;
   width: 150px;
-  margin: 1px auto;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: -380px;
 }
 
 
 #press, #collect, #goOn, #gonext {
   cursor: pointer;
+  background: #ddd;
 }
 
-#press {
-  width: 220px;
-  line-height: normal;
-  margin: 10px;
-  background-color: lemonchiffon;
+#press:hover, #collect:hover, #goOn:hover, #gonext:hover {
+  background-color: #c2c2c2;
 }
 
-#collect {
-  width: 220px;
-  line-height: normal;
-  margin: 10px;
-  background-color: lavender;
-}
-
-#gonext {
-  margin: auto;
-}
-
-#message {
-  margin: auto;
-}
-
-#action_buttons {
-  display: flex;
-}
 
 /* CSS */
 .button-flat {

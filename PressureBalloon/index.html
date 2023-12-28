@@ -10,7 +10,7 @@
    rel = "stylesheet">
 <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 <script src="script.js"></script>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style2.css">
 
 <title>
 BART
@@ -30,10 +30,10 @@ BART
   
   <div id="round"></div>
   <div id="bigbigwrap">
-	<div id="sliderwrap">
-	  <div id="showValue">Air pressure <br />(0 to 30)</div>
-	  <div id="slider"></div>
-	</div> 
+	  <div id="sliderwrap">
+	    <div id="showValue">Air pressure <br />(0 to 30)</div>
+	    <div id="slider"></div>
+	  </div> 
 	
     <div id="bigwrap">
 
@@ -44,8 +44,11 @@ BART
 	    <img src="Balloon.png" id="ballon" alt="Ballon">
 	  </div>
 	  
-	  <button type="button" id="press"></button>
-	  <button type="button" id="collect"></button>
+    <div id="action_buttons">
+      <button type="button" id="press" class="button-flat"></button>
+	    <button type="button" id="collect" class="button-flat"></button> 
+    </div>
+	  
 	  <div id="total">
 	    <div id="total_term"></div>
 	    <div id="total_value"></div>
