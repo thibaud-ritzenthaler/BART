@@ -62,41 +62,41 @@ $(document).ready(function() {
     }
 
     if (language === "EN") {
-        label_press = 'Druck in der Zuleitung erhöhen';
-        label_collect = 'Ballon mit Luft aus Zuleitung aufpumpen';
-        label_balance = 'Gesamtguthaben:';
-        label_currency = ' Taler';
-        label_header = 'Ballon-Spiel Runde ';
-        label_gonext1 = 'Nächste Runde starten';
-        label_gonext2 = 'Spiel beenden';
-        msg_1 = '<p>Sie haben in dieser Runde ';
-        msg_explosion2 = ' Mal den Druck erhöht. Der Ballon ist jedoch schon nach ';
-        msg_explosion3 = ' Druckerhöhungen geplatzt!</p><p>Sie haben in dieser Runde kein Geld verdient.</p>';
-        msg_collect2 = ' Mal den Druck erhöht, ohne dass der Ballon explodiert ist. Der Ballon wäre in dieser Runde erst nach '
-        msg_collect3 = ' Druckerhöhungen geplatzt.</p><p>Sie haben ';
-        msg_collect4 = ' Taler Gewinn gemacht. Das erspielte Geld ist sicher in der Bank.</p>';
-        msg_end1 = '<p>Damit ist dieser Teil der Studie abgeschlossen. Sie haben im Ballon-Spiel ';
-        msg_end2 = ' Taler Gewinn gemacht. </p><p>Klicken Sie auf <i>Weiter</i>, um mit der Studie forzufahren.</p>';
-        not_push = 'In der Zuleitung befindet sich noch keine Luft. Sie können den Ballon erst aufpumpen, sobald Sie mindestens einmal Luft in die Zuleitung gepumpt haben. Betätigen Sie dazu den Button "Druck in der Zuleitung erhöhen."';
+        label_press = 'Pump air into the supply line';
+        label_collect = 'Inflate the balloon with air from the supply line';
+        label_balance = 'Total coins:';
+        label_currency = ' coins';
+        label_header = 'Balloon-game, round ';
+        label_gonext1 = 'Begin next round';
+        label_gonext2 = 'End game';
+        msg_1 = '<p>In this round, you have blown ';
+        msg_explosion2 = ' pumps of air. However, the balloon exploded after ';
+        msg_explosion3 = ' pressure increases!</p><p>You did not earn any money in this round.</p>';
+        msg_collect2 = ' pumps of air, without the balloon exploding. This round, the balloon would have exploded after '
+        msg_collect3 = ' pumps of air.</p><p>You have made a profit of ';
+        msg_collect4 = ' coins. The money you have won is safe in the bank.</p>';
+        msg_end1 = '<p>Thus concludes this portion of the study. You have won a total of ';
+        msg_end2 = ' coins during this ballon-game. </p><p>Click on <i>next</i> to continue the study.</p>';
+        not_push = 'There is no air in the supply line yet. You can only inflate the balloon once you have pumped air into the supply line at least once. To do this, press the "Pump air into the supply line" button.';
     }
 
     if (language === "FR") {
-        label_press = 'Druck in der Zuleitung erhöhen';
-        label_collect = 'Ballon mit Luft aus Zuleitung aufpumpen';
-        label_balance = 'Gesamtguthaben:';
-        label_currency = ' Taler';
-        label_header = 'Ballon-Spiel Runde ';
-        label_gonext1 = 'Nächste Runde starten';
-        label_gonext2 = 'Spiel beenden';
-        msg_1 = '<p>Sie haben in dieser Runde ';
-        msg_explosion2 = ' Mal den Druck erhöht. Der Ballon ist jedoch schon nach ';
-        msg_explosion3 = ' Druckerhöhungen geplatzt!</p><p>Sie haben in dieser Runde kein Geld verdient.</p>';
-        msg_collect2 = ' Mal den Druck erhöht, ohne dass der Ballon explodiert ist. Der Ballon wäre in dieser Runde erst nach '
-        msg_collect3 = ' Druckerhöhungen geplatzt.</p><p>Sie haben ';
-        msg_collect4 = ' Taler Gewinn gemacht. Das erspielte Geld ist sicher in der Bank.</p>';
-        msg_end1 = '<p>Damit ist dieser Teil der Studie abgeschlossen. Sie haben im Ballon-Spiel ';
-        msg_end2 = ' Taler Gewinn gemacht. </p><p>Klicken Sie auf <i>Weiter</i>, um mit der Studie forzufahren.</p>';
-        not_push = 'In der Zuleitung befindet sich noch keine Luft. Sie können den Ballon erst aufpumpen, sobald Sie mindestens einmal Luft in die Zuleitung gepumpt haben. Betätigen Sie dazu den Button "Druck in der Zuleitung erhöhen."';
+        label_press = 'Faire monter la pression dans le tuyau d\'alimentation';
+        label_collect = 'Relâcher l\'air du tuyan  d\'alimentation dans le ballon ';
+        label_balance = 'Total des pièces:';
+        label_currency = ' Pièces';
+        label_header = 'Jeu du ballon, tour ';
+        label_gonext1 = 'Commencer le prochain tour';
+        label_gonext2 = 'Terminer la partie';
+        msg_1 = '<p>Dans ce tour, vous avez insufflé ';
+        msg_explosion2 = ' pompes dans le ballon. Mais le ballon a explosé à la pression de la ';
+        msg_explosion3 = ' pompe!</p><p>Vous n\'avez pas gagné d\'argent dans ce tour.</p>';
+        msg_collect2 = ' pompes dans le ballon, sans qu\'il n\'explose. Ce tour-ci, le ballon aurait explosé après '
+        msg_collect3 = ' pompes. Vous avez gagné ';
+        msg_collect4 = ' pièces. L\'argent gagné est à l\'abris dans la banque.</p>';
+        msg_end1 = '<p>Ceci conclut cette partie de l\'étude. Durant le jeu du ballon, vous avez gagné ';
+        msg_end2 = ' pièces. </p><p>Clicquez sur <i>suite</i> pour passer à la suite de l\'étude.</p>';
+        not_push = 'Il n\'y a pas encore d\'air dans le tuyau d\'alimentation. Vous ne pouvez gonfler le ballon que lorsque vous avez pompé de l\'air au moins une fois dans le tuyau d\'alimentation. Pour ce faire, cliquez sur le bouton "Faire monter la pression dans le tuyau d\'alimentation".';
     }
     
     
