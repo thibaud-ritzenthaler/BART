@@ -1,8 +1,6 @@
 // pressure version of the BART
 
 $(document).ready(function() { 
-    console.log("coucou");
-    
     const saveThis = 'hidden'; // text fields that save data should not be shown; can be shown in testing
     
     // initialize values
@@ -307,5 +305,4 @@ $(document).ready(function() {
     // start the game!
     new_round();
     
-    console.log("bis bald")
 });
