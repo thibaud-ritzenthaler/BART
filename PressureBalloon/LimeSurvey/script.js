@@ -2,6 +2,7 @@
 
 $(document).ready(function() { 
     const saveThis = 'hidden'; // text fields that save data should not be shown; can be shown in testing
+    $("#answer477133X3X6").hide();
     
     // initialize values
     
