@@ -212,6 +212,7 @@ $(document).ready(function() {
         }
         else {
             end_game();
+            $("#answer477133X3X6").val(JSON.stringify(res));
         }
     });
      
@@ -276,8 +277,7 @@ $(document).ready(function() {
             rounds.number_pumps= i;
             rounds.timers = timers;
             timers = [];
-            res.push(rounds)
-            $("#answer477133X3X6").val(JSON.stringify(res));
+            res.push(rounds);
 
         }
     });
